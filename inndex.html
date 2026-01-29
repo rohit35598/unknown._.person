@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rohit | Personal Website</title>
+
+  <style>.header-insta{
+  margin-top:25px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 26px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+  color:white;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  transition:0.4s ease;
+}
+
+.header-insta:hover{
+  transform:translateY(-4px) scale(1.06);
+  box-shadow:0 20px 50px rgba(0,0,0,0.7);
+}
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-weight: normal;
+      color: #00ffd5;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      padding: 20px;
+      background: rgba(0,0,0,0.3);
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 30px;
+      }
+    }
+  </style><!-- Chatbot Button -->
+<button onclick="openChat()" style="
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+border:none;
+font-size:26px;
+background:#00ffd5;
+cursor:pointer;
+">🤖</button>
+
+<!-- Chatbot Box -->
+<div id="chatbot" style="
+display:none;
+position:fixed;
+bottom:90px;
+right:20px;
+width:280px;
+background:#0b0f1a;
+color:white;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+overflow:hidden;
+">
+
+<div style="background:#00ffd5;color:black;padding:10px;text-align:center;">
+AI Assistant
+</div>
+
+<div id="chat" style="padding:10px;height:200px;overflow:auto;font-size:14px;">
+<div>👋 Hi! I’m Rohit’s AI chatbot.</div>
+</div>
+
+<input id="msg" placeholder="Type here..." style="
+width:100%;
+padding:10px;
+border:none;
+outline:none;
+">
+</div>
+
+<script>
+function openChat(){
+  let box=document.getElementById("chatbot");
+  box.style.display=box.style.display==="block"?"none":"block";
+}
+
+document.getElementById("msg").addEventListener("keypress",function(e){
+  if(e.key==="Enter"){
+    let m=this.value.toLowerCase();
+    let chat=document.getElementById("chat");
+    chat.innerHTML+="<div style='text-align:right;color:#00ffd5'>"+this.value+"</div>";
+    this.value="";
+
+    let r="I’m learning 😊";
+
+    if(m.includes("hi")||m.includes("hello")) r="Hello 👋";
+    else if(m.includes("name")) r="I’m Rohit’s AI chatbot 🤖";
+    else if(m.includes("instagram")) r="Instagram: @unknown._.person_266 📸";
+    else if(m.includes("contact")) r="DM on Instagram anytime 👍";
+    else if(m.includes("ai")) r="Rohit is learning AI & web development 🚀";
+
+    setTimeout(()=>{
+      chat.innerHTML+="<div>"+r+"</div>";
+      chat.scrollTop=chat.scrollHeight;
+    },500);
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+  <header>
+    <h1>Hi, I’m Rohit 👋</h1>
+    <h2>Student | Tech Learner | Future Creator</h2>
+  </header>
+
+  <section>
+    <div class="card fade-up">
+  <h2>About Me</h2>
+  <p>17 y/o learner building modern websites & AI projects.</p>
+</div>
+
+
+    <div class="card">
+      <h3>Skills</h3>
+      <p>HTML • CSS • JavaScript • AI Basics • YouTube Content</p>
+    </div>
+
+    <div class="card">
+      <h3>Contact</h3>
+      <p>Email: example@rohitrohit91851@gmail.com</p>
+      <p>Instagram: @unknown._.person_266</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Rohit | All Rights Reserved
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rohit | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>.insta-box{
+  margin-top:20px;
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding:14px 22px;
+  border-radius:40px;
+  background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+  color:white;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  transition:0.4s ease;
+}
+
+.insta-box:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:0 20px 50px rgba(0,0,0,0.7);
+}
+
+.insta-icon{
+  font-size:22px;
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+<!-- Chatbot Button -->
+<button onclick="openChat()" style="
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+border:none;
+font-size:26px;
+background:#00ffd5;
+cursor:pointer;
+">🤖</button>
+
+<!-- Chatbot Box -->
+<div id="chatbot" style="
+display:none;
+position:fixed;
+bottom:90px;
+right:20px;
+width:280px;
+background:#0b0f1a;
+color:white;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+overflow:hidden;
+">
+
+<div style="background:#00ffd5;color:black;padding:10px;text-align:center;">
+AI Assistant
+</div>
+
+<div id="chat" style="padding:10px;height:200px;overflow:auto;font-size:14px;">
+<div>👋 Hi! I’m Rohit’s AI chatbot.</div>
+</div>
+
+<input id="msg" placeholder="Type here..." style="
+width:100%;
+padding:10px;
+border:none;
+outline:none;
+">
+</div>
+
+<script>/* Fade + slide animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card hover animation */
+.card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Button animation */
+.dm-btn {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0,255,213,0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(0,255,213,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,255,213,0); }
+}
+
+function openChat(){
+  let box=document.getElementById("chatbot");
+  box.style.display=box.style.display==="block"?"none":"block";
+}
+
+document.getElementById("msg").addEventListener("keypress",function(e){
+  if(e.key==="Enter"){
+    let m=this.value.toLowerCase();
+    let chat=document.getElementById("chat");
+    chat.innerHTML+="<div style='text-align:right;color:#00ffd5'>"+this.value+"</div>";
+    this.value="";
+
+    let r="I’m learning 😊";
+
+    if(m.includes("hi")||m.includes("hello")) r="Hello 👋";
+    else if(m.includes("name")) r="I’m Rohit’s AI chatbot 🤖";
+    else if(m.includes("instagram")) r="Instagram: @unknown._.person_266 📸";
+    else if(m.includes("contact")) r="DM on Instagram anytime 👍";
+    else if(m.includes("ai")) r="Rohit is learning AI & web development 🚀";
+
+    setTimeout(()=>{
+      chat.innerHTML+="<div>"+r+"</div>";
+      chat.scrollTop=chat.scrollHeight;
+    },500);
+  }
+});
+</script><a href="https://instagram.com/unknown._.person_266" 
+   target="_blank" 
+   class="insta-box fade-up">
+  <span class="insta-icon">📸</span>
+  @unknown._.person_266
+</a>
+
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0b0f1a;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: radial-gradient(circle at top, #1a2a6c, #0b0f1a);
+    }
